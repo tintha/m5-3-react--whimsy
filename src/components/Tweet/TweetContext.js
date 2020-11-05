@@ -15,7 +15,17 @@ export const TweetProvider = ({children}) => {
   const avatarSrc = avatar;
   const isRetweetedByCurrentUser = false;
   const isLikedByCurrentUser = false;
-  const date = moment().format('LT - ll');;
+  const date = moment().format('LT - ll');
+
+  const handleToggleLike = () => {
+    setIsLiked(!isLiked);
+    isLiked ? setNumOfLikes(numOfLikes - 1) : setNumOfLikes(numOfLikes + 1);
+  }
+
+  const handleToggleRetweet = () => {
+    setIsRetweeted(!isRetweeted);
+    isRetweeted ? setNumRetweets(numOfRetweets -1) : setNumRetweets(numOfRetweets + 1);
+  }
 
   return (
     <TweetContext.Provider 
@@ -30,7 +40,9 @@ export const TweetProvider = ({children}) => {
         numOfLikes,
         numOfRetweets,
         isLiked,
-        isRetweeted
+        isRetweeted, 
+        handleToggleLike,
+        handleToggleRetweet
       }}>
       {children}
     </TweetContext.Provider>
