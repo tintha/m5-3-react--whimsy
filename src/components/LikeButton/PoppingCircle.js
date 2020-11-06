@@ -29,7 +29,6 @@ const Wrapper = styled.div`
   background-color: ${props => props.color};
   width: ${props => props.size}px;
   height: ${props => props.size}px;
-  position: absolute;
   border-radius: 50%;
   animation: ${fade} 500ms forwards, ${scale} 500ms forwards;
 `;

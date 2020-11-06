@@ -5,6 +5,8 @@ import LikeButton from "../LikeButton";
 import Action from "./Action";
 import TweetActionIcon from "./TweetActionIcon";
 import { TweetContext } from "./TweetContext";
+import Rotate from './Rotate';
+import PoppingCircle from '../LikeButton/PoppingCircle'
 
 const ActionBar = () => {
   const { 
@@ -22,10 +24,20 @@ const ActionBar = () => {
         color="rgb(23, 191, 99)"
         size={40} 
         onClick={() => handleToggleRetweet()}>
-        <TweetActionIcon
-          kind="retweet"
-          color={isRetweeted ? "rgb(23, 191, 99)" : undefined}
-        />
+          {isRetweeted ? (
+          <Rotate>
+            <TweetActionIcon
+              kind="retweet"
+              color={isRetweeted ? "rgb(23, 191, 99)" : undefined}
+            />
+          </Rotate>
+          ) : (
+          <TweetActionIcon
+            kind="retweet"
+            color={isRetweeted ? "rgb(23, 191, 99)" : undefined}
+          />
+          )} 
+          {isRetweeted && <PoppingCircle size={40} color="#cce3de" />}
       </Action>
       <Action 
         color="rgb(224, 36, 94)" 
@@ -34,7 +46,7 @@ const ActionBar = () => {
         <LikeButton />
       </Action>
       <Action color="rgb(27, 149, 224)" size={40}>
-        <TweetActionIcon kind="share" />
+          <TweetActionIcon kind="share" />
       </Action>
     </Wrapper>
   );
