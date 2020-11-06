@@ -3,7 +3,10 @@ import styled from "styled-components";
 import { TweetContext } from "./TweetContext";
 
 const Stats = () => {
-  const { numOfLikes, numOfRetweets } = useContext(TweetContext);
+  const { 
+    numOfLikes, 
+    numOfRetweets 
+    } = useContext(TweetContext);
 
   return (
     <Wrapper>

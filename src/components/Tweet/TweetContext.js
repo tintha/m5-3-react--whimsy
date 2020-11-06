@@ -19,12 +19,16 @@ export const TweetProvider = ({children}) => {
 
   const handleToggleLike = () => {
     setIsLiked(!isLiked);
-    isLiked ? setNumOfLikes(numOfLikes - 1) : setNumOfLikes(numOfLikes + 1);
+    isLiked ? 
+    setNumOfLikes(numOfLikes - 1) : 
+    setNumOfLikes(numOfLikes + 1);
   }
 
   const handleToggleRetweet = () => {
     setIsRetweeted(!isRetweeted);
-    isRetweeted ? setNumRetweets(numOfRetweets -1) : setNumRetweets(numOfRetweets + 1);
+    isRetweeted ? 
+    setNumRetweets(numOfRetweets -1) : 
+    setNumRetweets(numOfRetweets + 1);
   }
 
   return (

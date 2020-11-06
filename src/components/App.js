@@ -2,7 +2,6 @@ import React, { useContext } from "react";
 import styled from "styled-components";
 
 import Tweet from "./Tweet";
-import { TweetContext } from "./Tweet/TweetContext";
 
 const App = () => {
 
